@@ -5,8 +5,10 @@ import './App.css';
 class GradientCard extends Component {
   render () {
 
+    var gradientColor = this.props.gradientBg.join(',');
+
     const cardGradient ={
-      background:this.props.gradientBg,
+      background:'linear-gradient('+this.props.gradientDeg+'deg ,' + gradientColor + ')',
       minHeight:280
     };
     return(
@@ -31,6 +33,9 @@ class GradientCard extends Component {
 
 class GradientCardContainer extends Component {
 
+  getRandomAngle() {
+    return Math.floor((Math.random() * 360));
+  }
 
   getRandomGreyVal() {
     return Math.floor((Math.random() * 256));
@@ -40,22 +45,26 @@ class GradientCardContainer extends Component {
   return 'rgb(' + this.getRandomGreyVal() + ',' + this.getRandomGreyVal() + ',' + this.getRandomGreyVal() + ')';
 }
 
-  generateRandomGradient() {
+  generateRandomGradient(count = 2) {
 
-    var color1 = this.getRandomColor();
-    var color2 = this.getRandomColor();
+    if(count>4 || count<2)
+      count = 2;
 
-    console.log(color1 + ', ' + color2);
+    let gradientColors =[];
 
-    return 'linear-gradient(to right,' + color1 + ', ' + color2 + ')';
+    for (let i=0;i<count;i++)
+      gradientColors.push(this.getRandomColor());
+
+    return gradientColors;
   }
 
   render() {
-    const cardCount = 30;
+    const cardCount = this.props.cardCount;
     var gradientCards = [];
 
+    // Get array of random gradients
     for (let i=0;i<cardCount;i++) {
-      gradientCards.push(<GradientCard gradientBg={this.generateRandomGradient()}/>);
+      gradientCards.push(<GradientCard gradientDeg={this.getRandomAngle()} gradientBg={this.generateRandomGradient(this.props.gradientColorCount)}/>);
     }
 
     return(
@@ -73,7 +82,7 @@ class App extends Component {
   render() {
     return (
       <div class="App">
-        <GradientCardContainer/>
+        <GradientCardContainer cardCount={50} gradientColorCount={2}/>
       </div>
     );
   }
