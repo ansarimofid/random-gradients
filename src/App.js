@@ -1,35 +1,7 @@
 import React, { Component } from 'react';
+import GradientCard from './components/GradientCard/GradientCard';
 import './App.css';
 
-
-class GradientCard extends Component {
-  render () {
-
-    var gradientColor = this.props.gradientBg.join(',');
-
-    const cardGradient ={
-      background:'linear-gradient('+this.props.gradientDeg+'deg ,' + gradientColor + ')',
-      minHeight:280
-    };
-    return(
-      <div class="uk-width-1-3@m uk-margin-medium-top">
-        <div class="uk-card uk-card-default uk-card-hover">
-          <div class="uk-card-media-top" style={cardGradient}>
-          </div>
-          <div class="uk-card-body">
-            <h6 class="uk-card-title">Media Top</h6>
-            <div class="colors">
-              <div class="gr-color-group">
-                <div class="gr-color"></div>
-              </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
 
 class GradientCardContainer extends Component {
 
@@ -58,6 +30,11 @@ class GradientCardContainer extends Component {
     return gradientColors;
   }
 
+  handleClick() {
+    console.log("Hello");
+    this.forceUpdate()
+  }
+
   render() {
     const cardCount = this.props.cardCount;
     var gradientCards = [];
@@ -67,8 +44,10 @@ class GradientCardContainer extends Component {
       gradientCards.push(<GradientCard gradientDeg={this.getRandomAngle()} gradientBg={this.generateRandomGradient(this.props.gradientColorCount)}/>);
     }
 
+
     return(
       <div class="uk-container">
+        <button class="uk-button uk-button-danger reload-btn" onClick={this.handleClick.bind(this)}><span is  uk-icon="icon: refresh;ratio:2"></span></button>
         <div class="uk-grid">
           {gradientCards}
         </div>

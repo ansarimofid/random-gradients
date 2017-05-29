@@ -1,0 +1,22 @@
+
+.gradient-card {
+    padding-top:40px;
+}
+
+.card-media{
+    min-height:250px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.shape-rect {
+
+}
+
+.shape-circle {
+    border-radius: 50%;
+}
+
+.shape-triangle {
+
+}
