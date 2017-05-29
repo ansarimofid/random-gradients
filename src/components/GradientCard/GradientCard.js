@@ -3,14 +3,29 @@
  */
 
 import React, {Component} from 'react';
+
+import Shapes from '../Shapes';
 import './Card.css';
 
 class GradientCard extends Component {
 
   getRectStyle(colors) {
-    return {
+
+    let shape = `<div></div><svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="a">
+          <stop is stop-color="${colors[0]}" offset="0%"/>
+          <stop is stop-color="${colors[1]}" offset="100%"/>
+        </linearGradient>
+      </defs>
+      <path d="M69 37h247v247H69z" transform="translate(-69 -37)" fill="url(#a)" fill-rule="evenodd"/>
+    </svg></div>`;
+
+    return shape;
+
+    /*return {
       background: 'linear-gradient(' + this.props.gradientDeg + 'deg ,' + colors + ')'
-    }
+    }*/
   }
 
   getCircleShape(colors) {
@@ -38,7 +53,7 @@ class GradientCard extends Component {
 
     // console.log(colors);
 
-    switch (Math.floor(Math.random() * 3)) {
+    /*switch (Math.floor(Math.random() * 3)) {
       case 0: {
         return this.getRectStyle(colors);
       }
@@ -51,31 +66,19 @@ class GradientCard extends Component {
       default: {
         return this.getRectStyle(colors);
       }
-    }
+    }*/
+    return this.getRectStyle(colors);
 
   }
 
 
   render() {
 
-    const gradientColor = this.props.gradientBg.join(',');
-
-    // const gradientFilledShapes = ['shape-rect','shape-circle'];
-
-    // const randomShape = gradientFilledShapes[Math.floor(Math.random()*2)];
-
-    const cardMediaStyle = {
-      background: 'linear-gradient(' + this.props.gradientDeg + 'deg ,' + gradientColor + ')'
-    };
-
-    const cardShapeStyle = this.getRandomShapeStyle(gradientColor);
-
-    console.log(this.getRandomShapeStyle(gradientColor));
-
     return (
       <div class="uk-width-1-3@m uk-margin-medium-top">
         <div class="uk-card uk-card-default uk-card-hover gradient-card">
-          <div class={`uk-card-media-top card-media`} style={cardShapeStyle}>
+          <div class={`uk-card-media-top card-media`}>
+            <Shapes gradientColors={this.props.gradientColors}/>
           </div>
           <div class="uk-card-body">
             <h6 class="uk-card-title">Media Top</h6>
