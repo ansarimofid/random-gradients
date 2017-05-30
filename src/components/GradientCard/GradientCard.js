@@ -81,7 +81,7 @@ class GradientCard extends Component {
             <Shapes gradientColors={this.props.gradientColors}/>
           </div>
           <div class="uk-card-body">
-            <h6 class="uk-card-title">Media Top</h6>
+            <h6 class="uk-card-title">{this.props.gradientColors[0]} -> {this.props.gradientColors[1]}</h6>
             <div class="colors">
               <div class="gr-color-group">
                 <div class="gr-color"></div>
