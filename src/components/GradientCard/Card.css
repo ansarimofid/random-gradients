@@ -1,6 +1,24 @@
 
 .gradient-card {
     padding-top:40px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+}
+
+.gradient-card:hover {
+    border-color: transparent;
+}
+
+.gradient-card .uk-card-title {
+    font-size: 20px;
+}
+
+.gradient-card .gr-color-group,.gradient-card .action {
+    margin-top: 35px;
+}
+
+.gradient-card .action .uk-button:not(:last-child){
+    margin-right: 15px;
 }
 
 .card-media{
@@ -9,14 +27,33 @@
     margin: 0 auto;
 }
 
-.shape-rect {
-
-}
-
-.shape-circle {
+.gr-color {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 
-.shape-triangle {
+.gr-color:not(:last-child) {
+    margin-right: 15px;
+}
 
+.gradient-card .action .uk-button-alt {
+    background-color: transparent;
+    border:3px solid black;
+    color: black;
+    box-sizing: border-box;
+    line-height: 34px;
+}
+
+.gradient-card .action .uk-button-alt:hover {
+    transition: 0.3s all;
+    background-color: black;
+    color: white;
+}
+
+@media (min-width: 960px) {
+    .gradient-card .uk-card-body {
+        text-align: left;
+    }
 }
