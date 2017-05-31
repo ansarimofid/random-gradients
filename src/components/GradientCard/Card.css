@@ -13,8 +13,16 @@
     font-size: 20px;
 }
 
-.gradient-card .gr-color-group,.gradient-card .action {
+.gradient-card .gr-color-group {
     margin-top: 35px;
+}
+
+.gradient-card .action{
+    margin-top: 20px;
+}
+
+.gradient-card .action > button{
+    margin-top: 15px;
 }
 
 .gradient-card .action .uk-button:not(:last-child){
@@ -75,11 +83,5 @@
 @media (min-width: 640px) {
     .gradient-card .uk-card-body {
         text-align: left;
-    }
-}
-
-@media (min-width: 640px) and (max-width: 700px) {
-    .gradient-card .action .uk-button-alt {
-        margin-bottom: 10px;
     }
 }

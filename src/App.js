@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UIkit from 'uikit';
+import ReactDOM from 'react-dom';
 
 import GradientCard from './components/GradientCard/GradientCard';
 import './App.css';
@@ -20,7 +21,6 @@ class GradientCardContainer extends Component {
       gradientCards:this.getGradientCardArray()
     };
   }
-
 
   getRandomAngle() {
     return Math.floor((Math.random() * 360));
@@ -67,7 +67,11 @@ class GradientCardContainer extends Component {
       status:'primary'
     });
 
-    this.forceUpdate()
+    this.setState({
+      gradientCards:this.getGradientCardArray()
+    });
+
+    ReactDOM.findDOMNode(this).scrollIntoView();
   }
 
   loadMore() {
@@ -84,7 +88,7 @@ class GradientCardContainer extends Component {
         <div class="uk-grid">
           {this.state.gradientCards}
         </div>
-        <button class="uk-button uk-button-danger uk-margin-medium-top" onClick={this.loadMore.bind(this)}>Load More</button>
+        <button class="uk-button uk-button-danger uk-margin-medium-top uk-margin-medium-bottom" onClick={this.loadMore.bind(this)}>Load More</button>
       </div>
     )
   }
@@ -95,7 +99,7 @@ class App extends Component {
   render() {
     return (
       <div class="App">
-        <GradientCardContainer cardCount={10} gradientColorCount={2}/>
+        <GradientCardContainer cardCount={25} gradientColorCount={2}/>
       </div>
     );
   }
