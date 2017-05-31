@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import UIkit from 'uikit';
+
 import GradientCard from './components/GradientCard/GradientCard';
 import './App.css';
 
@@ -11,6 +13,14 @@ function rgb2hex(rgb){
 }
 
 class GradientCardContainer extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      gradientCards:this.getGradientCardArray()
+    };
+  }
+
 
   getRandomAngle() {
     return Math.floor((Math.random() * 360));
@@ -41,27 +51,40 @@ class GradientCardContainer extends Component {
     return gradientColors;
   }
 
+  getGradientCardArray() {
+    let cardArray = [];
+    // Get array of random gradients cards
+    for (let i=0;i<this.props.cardCount;i++) {
+      cardArray.push(<GradientCard gradientDeg={this.getRandomAngle()} gradientColors={this.generateRandomGradient(this.props.gradientColorCount)}/>);
+    }
+
+    return cardArray;
+  }
+
   handleClick() {
-    console.log("Hello");
+    UIkit.notification({
+      message:'Reloaded All Gradients',
+      status:'primary'
+    });
+
     this.forceUpdate()
   }
 
+  loadMore() {
+    this.setState({
+      gradientCards:this.state.gradientCards.concat(this.getGradientCardArray())
+    });
+  }
+
   render() {
-    const cardCount = this.props.cardCount;
-    var gradientCards = [];
-
-    // Get array of random gradients
-    for (let i=0;i<cardCount;i++) {
-      gradientCards.push(<GradientCard key={i} gradientDeg={this.getRandomAngle()} gradientColors={this.generateRandomGradient(this.props.gradientColorCount)}/>);
-    }
-
 
     return(
       <div class="uk-container">
         <button class="uk-button uk-button-danger reload-btn" onClick={this.handleClick.bind(this)}><span is  uk-icon="icon: refresh;ratio:2"></span></button>
         <div class="uk-grid">
-          {gradientCards}
+          {this.state.gradientCards}
         </div>
+        <button class="uk-button uk-button-danger uk-margin-medium-top" onClick={this.loadMore.bind(this)}>Load More</button>
       </div>
     )
   }
@@ -72,7 +95,7 @@ class App extends Component {
   render() {
     return (
       <div class="App">
-        <GradientCardContainer cardCount={50} gradientColorCount={2}/>
+        <GradientCardContainer cardCount={10} gradientColorCount={2}/>
       </div>
     );
   }
