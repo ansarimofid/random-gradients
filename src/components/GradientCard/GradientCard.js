@@ -5,15 +5,21 @@
 import React, {Component} from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import UIkit from 'uikit';
+import TinyGradient from 'tinygradient';
 
 import Shapes from '../Shapes';
 import './Card.css';
+
+function getGradientCss(colors) {
+  // let gradient = TinyGradient(colors);
+  return TinyGradient(colors).css();
+}
 
 class GradientCard extends Component {
 
   onCopy(color) {
     UIkit.notification({
-      message:'Copied:'+color,
+      message:'Copied '+color,
       status:'primary'
     });
   }
@@ -52,7 +58,7 @@ class GradientCard extends Component {
               </div>
             </div>
             <div class="action">
-              <CopyToClipboard text={this.props.gradientColors}>
+              <CopyToClipboard text={getGradientCss(this.props.gradientColors)} onCopy={()=>this.onCopy("Gradient CSS")}>
                 <button class="uk-button uk-button-alt uk-button-secondary">Copy CSS</button>
               </CopyToClipboard>
               <button class="uk-button uk-button-secondary">Save</button>
