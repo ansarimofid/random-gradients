@@ -52,8 +52,14 @@
     color: white;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 640px) {
     .gradient-card .uk-card-body {
         text-align: left;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 700px) {
+    .gradient-card .action .uk-button-alt {
+        margin-bottom: 10px;
     }
 }

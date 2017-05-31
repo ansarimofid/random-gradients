@@ -28,7 +28,7 @@ class GradientCard extends Component {
     };
 
     return (
-      <div class="uk-width-1-3@m uk-margin-medium-top">
+      <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-medium-top">
         <div class="uk-card uk-card-default uk-card-hover gradient-card">
           <div class={`uk-card-media-top card-media`}>
             <Shapes gradientColors={this.props.gradientColors}/>
