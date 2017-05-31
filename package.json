@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "clipboard": "^1.7.1",
     "jquery": "^3.2.1",
     "react": "^15.5.4",
+    "react-copy-to-clipboard": "^5.0.0",
     "react-dom": "^15.5.4",
     "uikit": "^3.0.0-beta.24"
   },

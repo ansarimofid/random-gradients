@@ -28,10 +28,30 @@
 }
 
 .gr-color {
-    display: inline-block;
+    color: white;
+    display: inline-flex;
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.gr-color > span{
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.38);
+    position: absolute;
+    width: 35px;
+    border-radius: 50%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all;
+}
+
+.gr-color:hover > span {
+    opacity: 1;
 }
 
 .gr-color:not(:last-child) {

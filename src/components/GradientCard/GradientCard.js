@@ -3,6 +3,8 @@
  */
 
 import React, {Component} from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
+import UIkit from 'uikit';
 
 import Shapes from '../Shapes';
 import './Card.css';
@@ -16,6 +18,13 @@ function rgb2hex(rgb){
 }
 
 class GradientCard extends Component {
+
+  onCopy(color) {
+    UIkit.notification({
+      message:'Copied:'+color,
+      status:'primary'
+    });
+  }
 
   render() {
 
@@ -37,12 +46,22 @@ class GradientCard extends Component {
             <h6 class="uk-card-title"> {rgb2hex(this.props.gradientColors[1])} -> {rgb2hex(this.props.gradientColors[0])}</h6>
             <div class="colors">
               <div class="gr-color-group">
-                <div class="gr-color" style={grColor2Style}></div>
-                <div class="gr-color" style={grColor1Style}></div>
+                <CopyToClipboard text={rgb2hex(this.props.gradientColors[1])} onCopy={()=>this.onCopy(rgb2hex(this.props.gradientColors[1]))}>
+                  <div class="gr-color" style={grColor2Style}>
+                    <span is uk-icon="icon: copy"></span>
+                  </div>
+                </CopyToClipboard>
+                <CopyToClipboard text={rgb2hex(this.props.gradientColors[0])}>
+                  <div class="gr-color" style={grColor1Style}>
+                    <span is uk-icon="icon: copy"></span>
+                  </div>
+                </CopyToClipboard>
               </div>
             </div>
             <div class="action">
-              <button class="uk-button uk-button-alt uk-button-secondary">Copy CSS</button>
+              <CopyToClipboard text={this.props.gradientColors}>
+                <button class="uk-button uk-button-alt uk-button-secondary">Copy CSS</button>
+              </CopyToClipboard>
               <button class="uk-button uk-button-secondary">Save</button>
             </div>
           </div>
