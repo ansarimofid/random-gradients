@@ -7,7 +7,6 @@ import App from './App';
 import jQuery from 'jquery';
 import Icons from 'uikit/dist/js/uikit-icons';
 import UIkit from 'uikit';
-import Clipboard from 'clipboard';
 
 UIkit.use(Icons);
 

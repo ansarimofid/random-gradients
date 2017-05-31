@@ -9,14 +9,6 @@ import UIkit from 'uikit';
 import Shapes from '../Shapes';
 import './Card.css';
 
-function rgb2hex(rgb){
-  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
-  return (rgb && rgb.length === 4) ? "#" +
-    ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
-    ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
-    ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
-}
-
 class GradientCard extends Component {
 
   onCopy(color) {
@@ -43,15 +35,16 @@ class GradientCard extends Component {
             <Shapes gradientColors={this.props.gradientColors}/>
           </div>
           <div class="uk-card-body">
-            <h6 class="uk-card-title"> {rgb2hex(this.props.gradientColors[1])} -> {rgb2hex(this.props.gradientColors[0])}</h6>
+            <h6 class="uk-card-title"> {this.props.gradientColors[1]} -> {this.props.gradientColors[0]}</h6>
             <div class="colors">
               <div class="gr-color-group">
-                <CopyToClipboard text={rgb2hex(this.props.gradientColors[1])} onCopy={()=>this.onCopy(rgb2hex(this.props.gradientColors[1]))}>
+                <CopyToClipboard text={this.props.gradientColors[1]} onCopy={()=>this.onCopy(this.props.gradientColors[1])}>
                   <div class="gr-color" style={grColor2Style}>
                     <span is uk-icon="icon: copy"></span>
                   </div>
                 </CopyToClipboard>
-                <CopyToClipboard text={rgb2hex(this.props.gradientColors[0])}>
+
+                <CopyToClipboard text={this.props.gradientColors[0]} onCopy={()=>this.onCopy(this.props.gradientColors[0])}>
                   <div class="gr-color" style={grColor1Style}>
                     <span is uk-icon="icon: copy"></span>
                   </div>
