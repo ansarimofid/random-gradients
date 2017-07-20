@@ -134,7 +134,7 @@ class RectStroked extends Component {
     return (
       <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
@@ -151,7 +151,7 @@ class CircleStroked extends Component {
     return (
       <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
@@ -195,7 +195,7 @@ class TriangleStroked extends Component {
     return (
       <svg width="250" height="250" viewBox="0 0 250 250" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
@@ -212,7 +212,7 @@ class DiamondStroked extends Component {
     return (
       <svg width="257" height="257" viewBox="0 0 257 257"  xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
@@ -229,7 +229,7 @@ class PolygonStroked extends Component {
     return (
       <svg width="254" height="253" viewBox="0 0 254 253" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
@@ -263,7 +263,7 @@ class TriangleRightStroked extends Component {
     return (
       <svg width="257" height="258" viewBox="0 0 257 258" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
@@ -280,7 +280,7 @@ class HeartStroked extends Component {
     return (
       <svg width="261" height="220" viewBox="0 0 261 220" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
@@ -297,7 +297,7 @@ class PureDiamondStroked extends Component {
     return (
       <svg width="245" height="213" viewBox="0 0 245 213" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id={getHashCode(colors.join('-'))}>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getHashCode(colors.join('-'))}>
             <stop stopColor={colors[0]} offset="0%"/>
             <stop stopColor={colors[1]} offset="100%"/>
           </linearGradient>
