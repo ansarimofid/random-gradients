@@ -83,7 +83,7 @@ class GradientCardContainer extends Component {
   render() {
 
     return(
-      <div class="uk-container">
+      <div class="uk-container uk-text-center">
         <button class="uk-button uk-button-danger reload-btn" onClick={this.handleClick.bind(this)}><span is  uk-icon="icon: refresh;ratio:2"></span></button>
         <div class="uk-grid">
           {this.state.gradientCards}
@@ -98,7 +98,7 @@ class GradientCardContainer extends Component {
 class Home extends Component {
   render() {
     return (
-      <div class="App">
+      <div class="Home">
         <GradientCardContainer cardCount={25} gradientColorCount={2}/>
       </div>
     );

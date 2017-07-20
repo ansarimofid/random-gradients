@@ -6,6 +6,13 @@ Header.uk-active {
     background-color: white;
 }
 
-.uk-navbar-nav>li.uk-active>a {
+.uk-navbar-nav>li>a.active {
     color: #ee395b;
+}
+
+@media (max-width: 639px) {
+    .uk-nav-center-sm {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
