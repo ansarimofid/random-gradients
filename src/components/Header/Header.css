@@ -1,0 +1,11 @@
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+    font-family: 'Roboto Mono', monospace;
+}
+
+Header.uk-active {
+    background-color: white;
+}
+
+.uk-navbar-nav>li.uk-active>a {
+    color: #ee395b;
+}
