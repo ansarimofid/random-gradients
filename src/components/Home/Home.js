@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import UIkit from 'uikit';
 import ReactDOM from 'react-dom';
 
-import GradientCard from './components/GradientCard/GradientCard';
-import './App.css';
+import GradientCard from '../GradientCard/GradientCard';
+import './Home.css';
 
 function rgb2hex(rgb){
   rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
@@ -95,7 +95,7 @@ class GradientCardContainer extends Component {
 }
 
 
-class App extends Component {
+class Home extends Component {
   render() {
     return (
       <div class="App">
@@ -105,4 +105,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
