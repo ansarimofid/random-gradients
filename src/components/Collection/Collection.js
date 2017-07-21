@@ -19,14 +19,18 @@ class Collection extends Component {
     let gradientCollection = JSON.parse(localStorage.getItem("gradient-collection"));
     // Get array of random gradients cards
     for (let i=0;i<gradientCollection.length;i++) {
-      cardArray.push(<GradientCard  gradientColors={gradientCollection[i]}/>);
+      cardArray.push(<GradientCard handleChange={this.handleChange.bind(this)} cardAction="remove"  gradientColors={gradientCollection[i]}/>);
     }
     return cardArray;
   }
 
+  handleChange() {
+    this.setState({
+      gradientCollections:this.getGradientCollection()
+    });
+  }
+
   render() {
-    let existingEntries = JSON.parse(localStorage.getItem("gradient-collection"));
-    // existingEntries = existingEntries.map((data)=>{return data+'<br>';})
     return (
       <div class="uk-container">
         <h1 className="title-deco gradient-text uk-text-center uk-margin-medium-top uk-margin-medium-bottom">
@@ -35,8 +39,6 @@ class Collection extends Component {
         <div class="uk-grid">
           {this.state.gradientCollections}
         </div>
-        {/*<p>{existingEntries[0]}</p>
-        <GradientCard gradientColors={existingEntries[0]}/>*/}
       </div>
     )
   }

@@ -55,7 +55,7 @@ class GradientCardContainer extends Component {
     let cardArray = [];
     // Get array of random gradients cards
     for (let i=0;i<this.props.cardCount;i++) {
-      cardArray.push(<GradientCard gradientDeg={this.getRandomAngle()} gradientColors={this.generateRandomGradient(this.props.gradientColorCount)}/>);
+      cardArray.push(<GradientCard cardAction="save" gradientDeg={this.getRandomAngle()} gradientColors={this.generateRandomGradient(this.props.gradientColorCount)}/>);
     }
 
     return cardArray;

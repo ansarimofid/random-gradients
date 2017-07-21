@@ -30,36 +30,63 @@ class GradientCard extends Component {
 
   onCopy(color) {
     UIkit.notification({
-      message:'Copied '+color,
-      status:'primary'
+      message: 'Copied ' + color,
+      status: 'primary'
     });
   }
 
   handleSave() {
 
-    UIkit.notification({
-      message:'Gradients Saved',
-      status:'primary'
-    });
-
     let existingEntries = JSON.parse(localStorage.getItem("gradient-collection"));
-    if(existingEntries == null) existingEntries = [];
+    if (existingEntries == null) existingEntries = [];
 
-    // localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
     existingEntries.push(this.props.gradientColors);
     localStorage.setItem("gradient-collection", JSON.stringify(existingEntries));
+
+    UIkit.notification({
+      message: 'Gradients Saved',
+      status: 'primary'
+    });
+  }
+
+  handleRemove() {
+    let existingEntries = JSON.parse(localStorage.getItem("gradient-collection"));
+
+    existingEntries = existingEntries.filter((item) => {
+      return JSON.stringify(item) !== JSON.stringify(this.props.gradientColors);
+    });
+
+    localStorage.setItem("gradient-collection", JSON.stringify(existingEntries));
+
+    UIkit.notification({
+      message: 'Gradients Removed',
+      status: 'primary'
+    });
+    this.props.handleChange();
   }
 
   render() {
 
     const grColor1Style = {
-      backgroundColor:this.props.gradientColors[0]
+      backgroundColor: this.props.gradientColors[0]
     };
 
     const grColor2Style = {
-      backgroundColor:this.props.gradientColors[1]
+      backgroundColor: this.props.gradientColors[1]
     };
+
+    let  btnActn,actnLabel;
+
+    // Action Handler
+    if (this.props.cardAction === 'save') {
+      btnActn = this.handleSave.bind(this);
+      actnLabel = "Save";
+    }
+    else if(this.props.cardAction === 'remove') {
+      btnActn = this.handleRemove.bind(this);
+      actnLabel = "Remove";
+    }
 
     return (
       <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-medium-top">
@@ -71,13 +98,15 @@ class GradientCard extends Component {
             <h6 class="uk-card-title"> {this.props.gradientColors[0]} -> {this.props.gradientColors[1]}</h6>
             <div class="colors">
               <div class="gr-color-group">
-                <CopyToClipboard text={this.props.gradientColors[0]} onCopy={()=>this.onCopy(this.props.gradientColors[0])}>
+                <CopyToClipboard text={this.props.gradientColors[0]}
+                                 onCopy={() => this.onCopy(this.props.gradientColors[0])}>
                   <div class="gr-color" style={grColor1Style}>
                     <span is uk-icon="icon: copy"></span>
                   </div>
                 </CopyToClipboard>
 
-                <CopyToClipboard text={this.props.gradientColors[1]} onCopy={()=>this.onCopy(this.props.gradientColors[1])}>
+                <CopyToClipboard text={this.props.gradientColors[1]}
+                                 onCopy={() => this.onCopy(this.props.gradientColors[1])}>
                   <div class="gr-color" style={grColor2Style}>
                     <span is uk-icon="icon: copy"></span>
                   </div>
@@ -85,10 +114,11 @@ class GradientCard extends Component {
               </div>
             </div>
             <div class="action">
-              <CopyToClipboard text={getGradientCss(this.props.gradientColors)} onCopy={()=>this.onCopy("Gradient CSS")}>
+              <CopyToClipboard text={getGradientCss(this.props.gradientColors)}
+                               onCopy={() => this.onCopy("Gradient CSS")}>
                 <button class="uk-button uk-button-alt uk-button-secondary">Copy CSS</button>
               </CopyToClipboard>
-              <button class="uk-button uk-button-secondary" onClick={this.handleSave.bind(this)}>Save</button>
+              <button class="uk-button uk-button-secondary" onClick={btnActn}>{actnLabel}</button>
             </div>
           </div>
         </div>
