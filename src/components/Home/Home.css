@@ -8,7 +8,54 @@
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.11), 0 12px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media (max-width: 639px) {
+  .hero-container {
+    padding: 35px 0;
+  }
+
+  .hero-container .hero-svg {
+    width: calc(100% - 125px);
+    height: auto;
+  }
+}
+
+
+@media (min-width: 640px) {
+  .hero-container {
+    padding: 80px 0;
+  }
+
+  .hero-container .hero-svg {
+    width: 500px;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    padding: 100px 0;
+  }
+
+  .hero-container .hero-svg {
+    width: 600px;
+    height: auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-container {
+    padding: 150px 0;
+  }
+
+  .hero-container .hero-svg {
+    width: 800px;
+    height: auto;
+  }
 }
