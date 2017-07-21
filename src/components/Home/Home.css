@@ -8,7 +8,16 @@
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.11), 0 12px 12px 0 rgba(0, 0, 0, 0.12);
 }
 
+.title-deco {
+  font-family: 'Sail', cursive;
+}
 
+.gradient-text {
+  color:#FE5196 ;
+  background-image: linear-gradient(-90deg, #FE5196 2%, #F77062 98%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -17,24 +26,22 @@
 
 @media (max-width: 639px) {
   .hero-container {
-    padding: 35px 0;
+    padding: 35px 20px;
   }
 
-  .hero-container .hero-svg {
-    width: calc(100% - 125px);
-    height: auto;
+  .hero-container .hero-title {
+    font-size: 50px;
   }
 }
 
 
 @media (min-width: 640px) {
   .hero-container {
-    padding: 80px 0;
+    padding: 80px 20px;
   }
 
-  .hero-container .hero-svg {
-    width: 500px;
-    height: auto;
+  .hero-container .hero-title {
+    font-size: 60px;
   }
 }
 
@@ -43,9 +50,8 @@
     padding: 100px 0;
   }
 
-  .hero-container .hero-svg {
-    width: 600px;
-    height: auto;
+  .hero-container .hero-title {
+    font-size: 80px;
   }
 }
 
@@ -54,8 +60,7 @@
     padding: 150px 0;
   }
 
-  .hero-container .hero-svg {
-    width: 800px;
-    height: auto;
+  .hero-container .hero-title {
+    font-size: 100px;
   }
 }

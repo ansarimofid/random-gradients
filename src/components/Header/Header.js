@@ -13,7 +13,7 @@ const Header = () => (
         <div class="uk-navbar-right uk-nav-center-sm">
           <ul class="uk-navbar-nav">
             <li><NavLink exact to='/' activeClassName="active">Home</NavLink></li>
-            <li><NavLink to='/collection' activeClassName="active">Collection</NavLink></li>
+            <li><NavLink to='/collection' activeClassName="active">Saved-Collection</NavLink></li>
             <li><NavLink class="uk-padding-remove-right" to='/about' activeClassName="active">About</NavLink></li>
           </ul>
         </div>

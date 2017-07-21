@@ -36,13 +36,14 @@ class GradientCard extends Component {
   }
 
   handleSave() {
-    /*console.log(this.props.gradientColors);
-    let gradKey = getHashCode(this.props.gradientColors.join('-'));
-    localStorage.setItem(gradKey,this.props.gradientColors)*/
+
+    UIkit.notification({
+      message:'Gradients Saved',
+      status:'primary'
+    });
+
     let existingEntries = JSON.parse(localStorage.getItem("gradient-collection"));
     if(existingEntries == null) existingEntries = [];
-    // let entryTitle = document.getElementById("entryTitle").value;
-    // let entryText = document.getElementById("entryText").value;
 
     // localStorage.setItem("entry", JSON.stringify(entry));
     // Save allEntries back to local storage
