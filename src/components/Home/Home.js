@@ -65,7 +65,8 @@ class GradientCardContainer extends Component {
     UIkit.notification({
       message:'Reloaded All Gradients',
       status:'primary',
-      pos: 'bottom-left'
+      pos: 'bottom-left',
+      timeout: 1000
     });
 
     this.setState({

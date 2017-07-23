@@ -42,7 +42,8 @@ class GradientCard extends Component {
     UIkit.notification({
       message: 'Copied ' + color,
       status: 'primary',
-      pos: 'bottom-left'
+      pos: 'bottom-left',
+      timeout: 1000
     });
   }
 
@@ -57,7 +58,7 @@ class GradientCard extends Component {
       UIkit.notification({
         message: 'Gradients Saved',
         status: 'primary',
-        pos: 'bottom-left'
+        timeout: 1000
       });
     }
     // Check if item already exist
@@ -66,13 +67,16 @@ class GradientCard extends Component {
       UIkit.notification({
         message: 'Gradients Saved',
         status: 'primary',
-        pos: 'bottom-left'
+        pos: 'bottom-left',
+        timeout: 1000
       });
     }
     else {
       UIkit.notification({
         message: 'Gradients Already Saved',
-        pos: 'bottom-left'
+        status: 'primary',
+        pos: 'bottom-left',
+        timeout: 1000
       });
     }
 
@@ -92,7 +96,8 @@ class GradientCard extends Component {
     UIkit.notification({
       message: 'Gradients Removed',
       status: 'primary',
-      pos: 'bottom-left'
+      pos: 'bottom-left',
+      timeout: 1000
     });
     this.props.handleChange();
   }
