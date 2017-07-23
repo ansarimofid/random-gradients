@@ -26,6 +26,16 @@ function getHashCode(str) {
   return hash;
 }
 
+function itemExistInArray(array, item) {
+  for (let i = 0; i < array.length; i++) {
+    // This if statement depends on the format of your array
+    if (array[i][0] == item[0] && array[i][1] == item[1]) {
+      return true;   // Found it
+    }
+  }
+  return false;
+}
+
 class GradientCard extends Component {
 
   onCopy(color) {
@@ -37,17 +47,34 @@ class GradientCard extends Component {
 
   handleSave() {
 
+    // Fetching Existing Entries
     let existingEntries = JSON.parse(localStorage.getItem("gradient-collection"));
-    if (existingEntries == null) existingEntries = [];
+
+    if (existingEntries == null) {
+      existingEntries = [];
+      existingEntries.push(this.props.gradientColors);
+      UIkit.notification({
+        message: 'Gradients Saved',
+        status: 'primary'
+      });
+    }
+    // Check if item already exist
+    else if(!itemExistInArray(existingEntries,this.props.gradientColors)) {
+      existingEntries.push(this.props.gradientColors);
+      UIkit.notification({
+        message: 'Gradients Saved',
+        status: 'primary'
+      });
+    }
+    else {
+      UIkit.notification({
+        message: 'Gradients Already Saved',
+        status: 'primary'
+      });
+    }
 
     // Save allEntries back to local storage
-    existingEntries.push(this.props.gradientColors);
     localStorage.setItem("gradient-collection", JSON.stringify(existingEntries));
-
-    UIkit.notification({
-      message: 'Gradients Saved',
-      status: 'primary'
-    });
   }
 
   handleRemove() {
