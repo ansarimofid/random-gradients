@@ -41,7 +41,8 @@ class GradientCard extends Component {
   onCopy(color) {
     UIkit.notification({
       message: 'Copied ' + color,
-      status: 'primary'
+      status: 'primary',
+      pos: 'bottom-left'
     });
   }
 
@@ -55,7 +56,8 @@ class GradientCard extends Component {
       existingEntries.push(this.props.gradientColors);
       UIkit.notification({
         message: 'Gradients Saved',
-        status: 'primary'
+        status: 'primary',
+        pos: 'bottom-left'
       });
     }
     // Check if item already exist
@@ -63,13 +65,14 @@ class GradientCard extends Component {
       existingEntries.push(this.props.gradientColors);
       UIkit.notification({
         message: 'Gradients Saved',
-        status: 'primary'
+        status: 'primary',
+        pos: 'bottom-left'
       });
     }
     else {
       UIkit.notification({
         message: 'Gradients Already Saved',
-        status: 'primary'
+        pos: 'bottom-left'
       });
     }
 
@@ -88,7 +91,8 @@ class GradientCard extends Component {
 
     UIkit.notification({
       message: 'Gradients Removed',
-      status: 'primary'
+      status: 'primary',
+      pos: 'bottom-left'
     });
     this.props.handleChange();
   }
