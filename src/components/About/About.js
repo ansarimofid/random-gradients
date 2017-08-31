@@ -2,8 +2,10 @@
  * Created by ansarimofid on 20/07/17.
  */
 import React from 'react'
+
+
 const About = ()=>(
-  <div className="uk-container uk-text-center">
+  <div className="uk-container uk-text-center about">
       <div is uk-grid>
           <div className="uk-width-1-6@s uk-width-1-6@m"></div>
           <div className="uk-width-2-3@s uk-width-2-3@m">
