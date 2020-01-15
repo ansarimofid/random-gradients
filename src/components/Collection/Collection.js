@@ -44,10 +44,7 @@ class Collection extends Component {
 
   render() {
     return (
-      <div class="uk-container">
-        <h1 className="title-deco gradient-text uk-text-center uk-margin-medium-top uk-margin-medium-bottom">
-          Saved-Collection
-        </h1>
+      <div class="uk-container uk-margin-large-top">
         <div class="uk-grid uk-margin-medium-bottom uk-text-center">
           {this.state.gradientCollections ?this.state.gradientCollections:<CollectionError/>}
         </div>

@@ -86,7 +86,7 @@ class GradientCardContainer extends Component {
 
     return(
       <div class="uk-container uk-text-center">
-        <button class="uk-button uk-button-danger reload-btn" onClick={this.handleClick.bind(this)}><span is  uk-icon="icon: refresh;ratio:2"></span></button>
+        {/* <button class="uk-button uk-button-danger reload-btn" onClick={this.handleClick.bind(this)}><span is  uk-icon="icon: refresh;ratio:2"></span></button> */}
         <div class="uk-grid">
           {this.state.gradientCards}
         </div>
@@ -100,14 +100,9 @@ class GradientCardContainer extends Component {
 class Home extends Component {
   render() {
     return (
-      <div class="Home">
+      <div class="Home uk-margin-large-top">
         {/*Hero Title*/}
-        <div class="uk-text-center hero-container uk-container">
-          <div className="title-deco hero-title gradient-text">
-            Random Gradients
-          </div>
-        </div>
-        <GradientCardContainer cardCount={25} gradientColorCount={2}/>
+        <GradientCardContainer cardCount={50} gradientColorCount={2}/>
       </div>
     );
   }

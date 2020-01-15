@@ -10,9 +10,39 @@ Header.uk-active {
     color: #ee395b;
 }
 
+.uk-logo {
+    font-size: 40px;
+}
+
+.uk-container.header {
+    max-width: 1210px;
+}
+
+@media (min-width: 960px) {
+    .uk-container.header {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
+
+@media (min-width: 640px) {
+    .uk-container.header {
+        padding-left: 26px;
+        padding-right: 26px;
+    }
+}
+
 @media (max-width: 639px) {
     .uk-nav-center-sm {
         margin-left: auto;
         margin-right: auto;
+    }
+    .uk-container.header {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .uk-nav-center-sm {
+        margin-left: auto;
+        margin-right: 0;
     }
 }

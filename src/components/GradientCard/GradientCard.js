@@ -7,7 +7,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import UIkit from 'uikit';
 import TinyGradient from 'tinygradient';
 
-import Shapes from '../Shapes';
+// import Shapes from '../Shapes';
 import './Card.css';
 
 function getGradientCss(colors) {
@@ -15,16 +15,16 @@ function getGradientCss(colors) {
   return TinyGradient(colors).css();
 }
 
-function getHashCode(str) {
-  let hash = 0;
-  if (str.length === 0) return hash;
-  for (let i = 0; i < str.length; i++) {
-    let char = str.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash; // Convert to 32bit integer
-  }
-  return hash;
-}
+// function getHashCode(str) {
+//   let hash = 0;
+//   if (str.length === 0) return hash;
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str.charCodeAt(i);
+//     hash = ((hash << 5) - hash) + char;
+//     hash = hash & hash; // Convert to 32bit integer
+//   }
+//   return hash;
+// }
 
 function itemExistInArray(array, item) {
   for (let i = 0; i < array.length; i++) {
@@ -126,9 +126,10 @@ class GradientCard extends Component {
 
     return (
       <div class="uk-width-1-2@s uk-width-1-3@m uk-margin-medium-top">
-        <div class="uk-card uk-card-default uk-card-hover gradient-card">
-          <div class={`uk-card-media-top card-media`}>
-            <Shapes gradientColors={this.props.gradientColors}/>
+        <div class="uk-card uk-card-default uk-card-hover gradient-card uk-padding-remove-top">
+          <div class={`uk-card-media-top`}>
+            {/* <Shapes gradientColors={this.props.gradientColors}/> */}
+            <div style={{height:'280px',backgroundImage: `linear-gradient(to bottom right, ${this.props.gradientColors[0]}, ${this.props.gradientColors[1]})`}}></div>
           </div>
           <div class="uk-card-body">
             <h6 class="uk-card-title"> {this.props.gradientColors[0]} -> {this.props.gradientColors[1]}</h6>

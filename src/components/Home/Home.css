@@ -9,7 +9,7 @@
 }
 
 .title-deco {
-  font-family: 'Sail', cursive;
+  font-family: 'Sail', cursive !important;
 }
 
 .gradient-text {

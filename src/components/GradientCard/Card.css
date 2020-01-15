@@ -1,12 +1,12 @@
 
 .gradient-card {
     padding-top:40px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: none;
+    box-shadow: 0 0 4px rgba(0,0,0,.08);
 }
 
 .gradient-card:hover {
     border-color: transparent;
+    border: 0;
 }
 
 .gradient-card .uk-card-title {
