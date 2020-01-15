@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.2.0",
     "jquery": "^3.2.1",
     "querystringify": "^2.1.1",
     "react": "^15.5.4",
@@ -55,6 +56,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
@@ -90,5 +93,5 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "http://ansarimofid.in/random-gradients"
+  "homepage": "https://random-gradients.thexyz.app"
 }
